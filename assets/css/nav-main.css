@@ -32,12 +32,13 @@ a:hover {
 
 img {
     max-width: 100%;
-    display: block;
+    display: flex;
 }
 
 .logo {
-    padding: 15px 0;
+    padding-bottom: 10px;
     width: 9%;
+    transform: scaleX(-1);
 }
 
 .barra {
@@ -99,7 +100,7 @@ img {
 .linkedin {
     width: 479px;
     height: 85px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.527);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,7 +126,7 @@ img {
 }
 
 .minha-foto {
-    width: 400px;
+    width: 412.5px;
     grid-area: minha-foto;
 }
 
@@ -142,7 +143,10 @@ img {
     position: relative;
     border: 5px solid black;
     border-radius: 200px;
-    animation: fotoAnimacao .9s infinite alternate-reverse linear;
+}
+
+.minha-foto2:hover {
+    animation: fotoAnimacao 1s infinite alternate-reverse linear;
 }
 
 .close-menu {
@@ -168,7 +172,7 @@ img {
 @media (max-width: 1200px) {
     
     #inicio {
-        background:rgb(42, 1, 53);
+        background:rgb(37, 0, 48);
         height: auto;
     }
 
@@ -202,5 +206,153 @@ img {
 
     .direita {
         margin-right: 15px;
+    }
+}
+
+@media (max-width: 950px) {
+    .minha-foto {
+        padding: 25px 0;
+    }
+
+    .altura-ajuste {
+        display: flex;
+        justify-content: center;
+    }
+
+    .organizador {
+        max-width: 300px;
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-areas: "minha-foto" "descricao";
+        line-height: 35px;
+    }
+
+    #inicio {
+        display: flex;
+        justify-content: center;
+    }
+
+    .minha-foto {
+        display: flex;
+        justify-content: center;
+    }
+
+    .descricao {
+        font-size: 20px;
+    }
+
+    .meu-nome {
+        font-size: 30px;
+    }
+
+    .esquerda, .direita {
+        margin: 0;
+    }
+
+    .logo {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .barra {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-centro {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .centralizador {
+        margin: 0;
+    }
+
+    .barra-container {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .barra-container .logo {
+        width: 100%;
+    }
+
+    .direita ul {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .direita ul a {
+        font-size: 35px;
+    }
+
+    /* Menu Mobile */
+    .barra {
+        display: block;
+        position: fixed;
+        top: -100vh;
+        transition: ease 0.3s;
+    }
+
+    .close-menu-label::after {
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.527);
+        color: white;
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~.barra {
+        top: 0;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        display: block;
+        content: '✕';
+        background: rgb(57, 1, 90);
+    }
+
+    .barra .barra-container ul li a {
+        font-size: 30px;
+    }
+
+    .barra {
+        background: rgba(0, 0, 0, 0.527);
+    }
+    
+    @media (max-width: 414px) {
+        .minha-foto {
+            margin-left: -25px;
+            width: 350px;
+        }
+
+        .descricao {
+            font-size: 25px;
+            margin-top: 15px;
+            margin-bottom: -20px;
+        }
     }
 }
