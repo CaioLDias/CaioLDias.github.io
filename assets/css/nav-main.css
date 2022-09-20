@@ -70,6 +70,7 @@ img {
     height: 100vh;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid white;
 }
 
 .altura-ajuste {
@@ -340,7 +341,7 @@ img {
     }
 
     .barra {
-        background: rgba(0, 0, 0, 0.527);
+        background: rgb(42, 1, 53);
     }
     
     @media (max-width: 414px) {
